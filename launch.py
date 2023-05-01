@@ -35,4 +35,9 @@ data = {
 }
 
 obj = api.post('instance-operations/launch', data)
-helper.show(obj['data'])
+if 'data' in obj:
+    helper.show(obj['data'])
+else:
+    print("*************************************************************************************")
+    print("*** Failed to launch the instance. Please check your configuration and try again. ***")
+    print("*************************************************************************************")
